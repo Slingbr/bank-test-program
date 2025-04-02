@@ -7,7 +7,7 @@ public class BankApp {
         boolean app = true;
         Scanner MenuSelect = new Scanner(System.in);
     
-        // Declare the account object outside the loop so it's accessible everywhere
+
         BankAccount newacc = null;
     
         while (app) {
@@ -20,25 +20,24 @@ public class BankApp {
     
             String choice = MenuSelect.nextLine();
     
-            // Menu options
+
             if (choice.equals("1")) {
                 System.out.println("Please enter your name:");
                 String AccName = MenuSelect.nextLine();
                 int AccNum = (int) (Math.random() * 10001);
-    
-                // Creating the new account
+t
                 newacc = new BankAccount(AccNum, AccName, 100);
     
-                // Show the account details after creation
+
                 newacc.displayAccountInfo();
             }
     
-            // Deposit money (if account exists)
+     
             if (choice.equals("2")) {
-                if (newacc != null) {  // Ensure the account exists first
+                if (newacc != null) {  
                     System.out.println("How much money would you like to deposit?");
                     int depoNum = MenuSelect.nextInt();
-                    MenuSelect.nextLine(); // Flush the buffer
+                    MenuSelect.nextLine(); 
     
                     newacc.deposit(depoNum);
                     newacc.displayAccountInfo();
@@ -68,13 +67,13 @@ public class BankApp {
 
             }
     
-            // Exit option
+  
             if (choice.equals("5")) {
                 app = false;
                 System.out.println("Thank you for using Boat Banking!");
             }
         }
     
-        MenuSelect.close(); // Close scanner 
+        MenuSelect.close(); 
     }
 }
