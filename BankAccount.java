@@ -4,14 +4,14 @@ public class BankAccount {
     private String holderName;
     private double accountBalance;
 
-    //  Constructor — Initializes account details
+ 
     public BankAccount(int accountNumber, String holderName, double initialBalance) {
         this.accountNumber = accountNumber;
         this.holderName = holderName;
         this.accountBalance = initialBalance;
     }
 
-    //  Method to deposit money
+
     public void deposit(double amount) {
         if (amount > 0) {
             accountBalance += amount;
@@ -21,7 +21,7 @@ public class BankAccount {
         }
     }
 
-    //  Method to withdraw money (checks for insufficient balance)
+
     public void withdraw(double amount) {
         if (amount > 0 && amount <= accountBalance) {
             accountBalance -= amount;
@@ -33,14 +33,12 @@ public class BankAccount {
         }
     }
 
-    //  Method to display account info
     public void displayAccountInfo() {
         System.out.println("\nAccount Number: " + accountNumber);
         System.out.println("Account Holder: " + holderName);
         System.out.println("Current Balance: $" + accountBalance);
     }
 
-    //   Method to transfer money between accounts
     public void transfer(BankAccount receiver, double amount) {
         if (amount > 0 && amount <= accountBalance) {
             this.withdraw(amount);
@@ -51,7 +49,7 @@ public class BankAccount {
         }
     }
 
-    //  Getters  Allow access to private details from other classes
+
     public int getAccountNumber() {
         return accountNumber;
     }
