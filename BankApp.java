@@ -1,4 +1,4 @@
-// Define a class named BankApp
+
 import java.util.Scanner;
 
 
